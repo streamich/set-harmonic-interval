@@ -5,16 +5,16 @@ test('calls timer', async () => {
 
   expect(spy).toHaveBeenCalledTimes(0);
 
-  const ref = setHarmonicInterval(spy, 1);
+  const ref = setHarmonicInterval(spy, 5);
 
   expect(spy).toHaveBeenCalledTimes(0);
 
-  await new Promise(r => setTimeout(r, 1));
+  await new Promise(r => setTimeout(r, 5));
   expect(spy).toHaveBeenCalledTimes(1);
 
   clearHarmonicInterval(ref);
 
-  await new Promise(r => setTimeout(r, 1));
+  await new Promise(r => setTimeout(r, 6));
   expect(spy).toHaveBeenCalledTimes(1);
 });
 
