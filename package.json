@@ -17,8 +17,8 @@
     "lib/"
   ],
   "scripts": {
-    "prettier": "prettier --ignore-path .gitignore --write 'src/**/*.{ts,tsx,js,jsx}'",
-    "prettier:diff": "prettier -l 'src/**/*.{ts,tsx,js,jsx}'",
+    "prettier": "prettier --ignore-path .gitignore --write \"src/**/*.{ts,tsx,js,jsx}\"",
+    "prettier:diff": "prettier -l \"src/**/*.{ts,tsx,js,jsx}\"",
     "tslint": "tslint 'src/**/*.{js,jsx,ts,tsx}' -t verbose",
     "clean": "rimraf lib",
     "build": "tsc",
