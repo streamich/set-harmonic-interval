@@ -13,6 +13,10 @@
     "node": ">=6.9"
   },
   "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "esnext": "lib/index.next.esm.js",
+  "types": "lib/index.d.ts",
+  "typings": "lib/index.d.ts",
   "files": [
     "lib/"
   ],
@@ -21,7 +25,7 @@
     "prettier:diff": "prettier -l \"src/**/*.{ts,tsx,js,jsx}\"",
     "tslint": "tslint 'src/**/*.{js,jsx,ts,tsx}' -t verbose",
     "clean": "rimraf lib",
-    "build": "tsc",
+    "build": "rimraf ./dist && rollup --config",
     "test": "jest --no-cache --config='jest.config.js'",
     "release": "semantic-release",
     "demo1": "yarn build && node demo1.js",
@@ -48,6 +52,8 @@
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
     "rimraf": "^3.0.0",
+    "rollup": "^1.20.3",
+    "rollup-plugin-typescript2": "^0.24.0",
     "semantic-release": "^15.13.24",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
@@ -55,8 +61,6 @@
     "tslint-config-common": "^1.6.0",
     "typescript": "^3.5.3"
   },
-  "types": "lib/index.d.ts",
-  "typings": "lib/index.d.ts",
   "release": {
     "verifyConditions": [
       "@semantic-release/changelog",
