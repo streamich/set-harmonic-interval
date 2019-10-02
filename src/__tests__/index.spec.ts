@@ -2,8 +2,8 @@ import {setHarmonicInterval, clearHarmonicInterval} from '..';
 
 jest.useFakeTimers();
 
-const setIntervalSpy = setInterval as any as jest.SpyInstance;
-const clearIntervalSpy = clearInterval as any as jest.SpyInstance;
+const setIntervalSpy = (setInterval as any) as jest.SpyInstance;
+const clearIntervalSpy = (clearInterval as any) as jest.SpyInstance;
 
 beforeEach(() => {
   setIntervalSpy.mockReset();

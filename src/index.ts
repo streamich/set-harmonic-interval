@@ -18,7 +18,7 @@ const buckets: Record<number, Bucket> = {};
 export const setHarmonicInterval = (fn: Listener, ms: number): TimerReference => {
   const id = counter++;
 
-  if (buckets[ms]) {  
+  if (buckets[ms]) {
     buckets[ms].listeners[id] = fn;
   } else {
     const timer = setInterval(() => {
@@ -37,7 +37,7 @@ export const setHarmonicInterval = (fn: Listener, ms: number): TimerReference =>
 
       if (didThrow) throw lastError;
     }, ms);
-    
+
     buckets[ms] = {
       ms,
       timer,
